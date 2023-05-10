@@ -1,14 +1,10 @@
 const cars = {
-    // getCarById: () => `"/cars/${carId}"`,
-    getCars: () => `"/cars"`,
-  };
-  
-  // const sales = {
-  //   getSalesById: () => `/fetch-cars-by-id`,
-  // };
+  // getCarById: () => `"/cars/${carId}"`,
+  getCars: () => `/cars`,
+};
 
-  export {
-  cars
-  };
+// const sales = {
+//   getSalesById: () => `/fetch-cars-by-id`,
+// };
 
-  
+export { cars };
