@@ -1,48 +1,53 @@
 import "./App.css";
-import { Dashboard } from "./components/Dashboard/Dashboard";
-import { Searchcar } from "./components/Searchcar";
-import { Addcar } from "./components/Addcar";
-import { Inventory } from "./components/Invertory";
-import { Cars } from "./components/Cars";
-import car from "./img/Car.jpg"
+import { Searchcar } from "./components/searchcar/searchcar";
+import { Addcar } from "./components/addcar/Addcar";
+import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
+import { Cars } from "./components/Cars/Cars";
+import { Sales } from "./components/sales/Sales";
+import { Customers } from "./components/customers/Customers";
+import { Inventory } from "./components/Inventory/Inventory";
+// import car from "./img/Car.jpg";
+import { useState } from "react";
+import Navbar from "./components/Navbar/Navbar";
+
 function App() {
+  // const [activeTab, setActiveTab] = useState("search");
+
   return (
-    <>
-      <div className="App">
-        <div  className="dashboard">
-        <Dashboard />
-        </div>
+    <div className="App">
+      <nav className="Navbar">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              index
+              element={
+                <div className="Navbar">
+                  <Link className="link" to="/Cars">
+                    Cars
+                  </Link>
+                  <Link className="link" to="/Sales">
+                    {" "}
+                    Sales{" "}
+                  </Link>
+                  <Link className="link" to="/Customers">
+                    Customers
+                  </Link>
+                </div>
+              }
+            />
+            <Route path="/Cars" element={<Cars />} />
+            <Route path="Search" element={Searchcar}></Route>
+            <Route path="Search" element={Addcar}></Route>
+            <Route path="Search" element={Inventory}></Route>
+            <Route path="/Sales" element={<Sales />} />
+            <Route path="/Customers" element={<Customers />} />
 
-        <div className="navmenu">
-          <Searchcar className="Searchcar" />
-          <Addcar className="Addcar" />
-          <Inventory className="Inventory" />
-          <Cars></Cars>
-        </div>
-
-        <div className="flex-container">
-          <img className="img-left" src={car} alt="logo" />
-          <form className="form">
-            <h1 className="search auto">Search Auto</h1>
-            <label for="Brand">Brand</label>
-            <br />
-            <input id="Brand" type="text" required />
-            <label>Model</label>
-            <br />
-            <input type="text" required />
-            <label>Year</label>
-            <br />
-            <input type="text" required />
-            <label>Price</label>
-            <br />
-            <input type="text" required />
-            <div>
-              <button type="submit">Search</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </>
+            <Route path="*" element={<div>404 Not Found</div>} />
+          </Routes>
+        </BrowserRouter>
+      </nav>
+      
+    </div>
   );
 }
 

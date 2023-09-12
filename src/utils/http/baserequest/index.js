@@ -28,6 +28,6 @@ const baseRequest = (url, options = {}) => {
     // headers: { ...buildHeaders(), ...headers },
     ...opts,
   });
-};
+}; 
 
 export default baseRequest;

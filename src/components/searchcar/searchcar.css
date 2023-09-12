@@ -1,0 +1,57 @@
+.searchcar {
+  display: flex;
+  flex-direction: row;
+  width: 420px;
+  height: 20px;
+  gap: 200px;
+  padding-top: 20px;
+  justify-content: space-around;
+  background: #E5E5E5;
+}
+
+.searchauto{
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.childs1 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 50px;
+  gap: 50px;
+  font-size: 18px;  
+}
+
+.input1{
+  width: 350px;
+  height: 20px;
+  border-width: 0ch;
+  border-radius: 2px;
+}
+
+.input-control1 {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.submit1 {
+  padding-left: 150px;
+}
+
+.button{
+  border-radius: 10px;
+  border-color: #E5E5E5;
+  font-size: 15px;
+  background-color: #FFC815;
+  width: 150px;
+  height: 35px;
+  font-weight: 600;
+}
+
+.logo-car{
+ width: 35px;
+ height: 20px;
+}

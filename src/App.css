@@ -1,52 +1,91 @@
 .App {
-  position: relative;
-  width: 1280px;
-  height: 832px;
-  
-  background: #FFFFFF;
+background: #FFFFFF;
+max-height: fit-content;
+height: 100%;
+width: 100%;
+max-width: -webkit-fill-available;
+}
+
+.link {
+  color: #ffc815;
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.dashboard-child-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flex-container{
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 50px;
+  gap: 30px;
+
 }
 
-.image-left{
-  position:relative;
-  /* left: 100px;
-  width: 50px;
-  height: 50px; */
+.img-left{
+  display: flex;
+  width: 750px;
+  height: 550px;
+ 
 }
 
 .form{
-  position: absolute;
-  left: 80%;
-  bottom: 40%;
-}
-
-.dashboard{
-  display: flex;
-  
+width: 420px;
+height: 550px;
+background: #E5E5E5;
+border: 1px solid #DDDDDD;
+border-radius: 5px;
 }
 
 .navmenu{
-  padding-top: 50px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/* .dashboard{
-  
-
-width: 69px;
-height: 29px;
-left: 904px;
-top: 20px;
-
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding-top: 80px;
+gap: 50px;
 font-family: 'Georama';
 font-style: normal;
 font-weight: 600;
 font-size: 24px;
-line-height: 29px;
-/* identical to box height */
+color: #FFC815;
+}
 
+.search-box{
+   border: 2px;
+   border-radius: 3px;
+   background-color: #585858;
+   width: 150px;
+  height: 50px;
+}
 
+/* .childs {
+  padding-top: 25px;
+  margin-left: 25px;
+} */
+
+.input{
+  border-radius: 5px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  font-family: 'Georama';
+  font-weight: 600;
+  color: white;
+}
+
+.submit{
+  padding-top: 25px;
+}

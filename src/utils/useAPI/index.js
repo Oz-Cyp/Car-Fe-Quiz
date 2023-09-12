@@ -23,3 +23,4 @@ const useAPI = (apiCallFn, deps = [], dataKey = "data") => {
 };
 
 export default useAPI;
+

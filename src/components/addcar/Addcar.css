@@ -1,0 +1,54 @@
+
+
+.addcar {
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+    height: 20px;
+    gap: 200px;
+    padding:20px;
+    background: #E5E5E5;
+  }
+  
+  .addauto{
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .childs {
+    position: absolute;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 18px;  
+  }
+  
+  .input{
+    width: 350px;
+    height: 20px;
+  }
+  
+  .input-control {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+  }
+  
+  .submit {
+    padding-left: 100px;
+  }
+  
+  button{
+    border-radius: 10px;
+    background-color: #FFC815;
+    width: 150px;
+    height: 35px;
+    font-weight: 600;
+  }
+  
+  .logo-car{
+   width: 35px;
+   height: 20px;
+  }
+  
