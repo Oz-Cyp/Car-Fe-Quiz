@@ -51,32 +51,34 @@ export const Addcar = () => {
       });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="addcar">
-        <img className="logo-car" src={logo} alt="logo" />
-        <div className="addauto">Add New Car</div>
-      </div>
-      <div className="childs">
-        <div className="input-control">
-          <label>Brand:</label>
-          <input type="text" value={Brand} onChange={handleBrandchange} />
+    <div className="flex-container">
+      <form onSubmit={handleSubmit}>
+        <div className="addcar">
+          <img className="logo-car" src={logo} alt="logo" />
+          <div className="addauto">Add New Car</div>
         </div>
-        <div className="input-control">
-          <label>Model:</label>
-          <input type="text" value={Model} onChange={handleModelchange} />
+        <div className="childs">
+          <div className="input-control">
+            <label>Brand:</label>
+            <input type="text" value={Brand} onChange={handleBrandchange} />
+          </div>
+          <div className="input-control">
+            <label>Model:</label>
+            <input type="text" value={Model} onChange={handleModelchange} />
+          </div>
+          <div className="input-control">
+            <label>Year:</label>
+            <input type="text" value={Year} onChange={handleYearchange} />
+          </div>
+          <div className="input-control">
+            <label>Price:</label>
+            <input type="text" value={Price} onChange={handlePricechange} />
+          </div>
+          <div className="submit">
+            <button type="submit">Sumbit</button>
+          </div>
         </div>
-        <div className="input-control">
-          <label>Year:</label>
-          <input type="text" value={Year} onChange={handleYearchange} />
-        </div>
-        <div className="input-control">
-          <label>Price:</label>
-          <input type="text" value={Price} onChange={handlePricechange} />
-        </div>
-        <div className="submit">
-          <button type="submit">Sumbit</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };

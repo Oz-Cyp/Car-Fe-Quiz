@@ -16,10 +16,10 @@
   }
   
   .childs {
-    position: absolute;
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+    padding-top: 50px;
     gap: 50px;
     font-size: 18px;  
   }
