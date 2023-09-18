@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Cars } from "./components/Cars/Cars";
 import { Sales } from "./components/sales/Sales";
 import { Customers } from "./components/customers/Customers";
+import Modal from "./components/sales/Modal";
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
               Cars
             </Link>
             <Link className="link" to="/Sales">
-              {" "}
-              Sales{" "}
+              Sales
             </Link>
             <Link className="link" to="/Customers">
               Customers
@@ -28,6 +28,7 @@ function App() {
           <Route path="/Sales" element={<Sales />} />
           <Route path="/Customers" element={<Customers />} />
           <Route path="*" element={<div>404 Not Found</div>} />
+          
         </Routes>
       </div>
     </BrowserRouter>

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import logo from "../../img/Logo.jpg";
 import "./Addcar.css";
+import postCar from "../../services/cars/postCar";
 
 export const Addcar = () => {
   const [Brand, setBrand] = useState("");
@@ -27,7 +28,7 @@ export const Addcar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //make the api call with the sumbitted data
+    //make the api call with the submitted data
     fetch("/cars", {
       method: "POST",
       body: JSON.stringify({ Brand, Model, Year, Price }),
@@ -52,30 +53,30 @@ export const Addcar = () => {
   };
   return (
     <div className="flex-container">
-      <form onSubmit={handleSubmit}>
+      <form className="form2" onSubmit={handleSubmit}>
         <div className="addcar">
           <img className="logo-car" src={logo} alt="logo" />
           <div className="addauto">Add New Car</div>
         </div>
-        <div className="childs">
-          <div className="input-control">
-            <label>Brand:</label>
-            <input type="text" value={Brand} onChange={handleBrandchange} />
+        <div className="childs2">
+          <div className="input-control2">
+            <label>Brand</label>
+            <input classname="input2" type="text" value={Brand} onChange={handleBrandchange} />
           </div>
-          <div className="input-control">
-            <label>Model:</label>
-            <input type="text" value={Model} onChange={handleModelchange} />
+          <div className="input-control2">
+            <label>Model</label>
+            <input classname="input2" type="text" value={Model} onChange={handleModelchange} />
           </div>
-          <div className="input-control">
-            <label>Year:</label>
-            <input type="text" value={Year} onChange={handleYearchange} />
+          <div className="input-control2">
+            <label>Year</label>
+            <input classname="input2" type="text" value={Year} onChange={handleYearchange} />
           </div>
-          <div className="input-control">
-            <label>Price:</label>
-            <input type="text" value={Price} onChange={handlePricechange} />
+          <div className="input-control2">
+            <label>Price</label>
+            <input classname="input2" type="text" value={Price} onChange={handlePricechange} />
           </div>
           <div className="submit">
-            <button type="submit">Sumbit</button>
+            <button className="button2" type="submit">SUBMIT</button>
           </div>
         </div>
       </form>

@@ -23,7 +23,7 @@ export const Customers = () => {
 
     fetchCustomers();
   }, []);
-  console.log(customers,"grthrrhrh")
+  console.log(customers, "grthrrhrh");
   if (loading) {
     return <div>Loading....</div>;
   }
@@ -47,10 +47,6 @@ export const Customers = () => {
     </div>
   );
 };
-
-
-
-
 
 // import React, { useEffect, useState } from "react";
 

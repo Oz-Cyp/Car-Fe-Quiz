@@ -22,6 +22,7 @@ let auth;
 
 const baseRequest = (url, options = {}) => {
   const { headers = {}, method = "get", ...opts } = options;
+  
 
   return axios(url, {
     method: method,

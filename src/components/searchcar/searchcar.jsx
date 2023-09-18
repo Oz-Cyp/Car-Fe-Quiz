@@ -6,10 +6,10 @@ import car from "../../img/Car.jpg";
 export const Searchcar = () => {
   return (
     <>
-      {" "}
+      {/* {" "} */}
       <div className="flex-container">
         <img className="img-left" src={car} alt="logo" />
-        <div className="form">
+        <form className="form1">
           <div className="searchcar">
             <img className="logo-car" src={logo} alt="logo" />
             <div className="searchauto">Search auto</div>
@@ -33,10 +33,11 @@ export const Searchcar = () => {
             </div>
 
             <div className="submit1">
-              <button type="submit">Search</button>
+              <button className="button" type="submit">Search</button>
             </div>
           </div>
-        </div>
+        </form>
+      
       </div>
     </>
   );

@@ -1,54 +1,67 @@
-
-
 .addcar {
-    display: flex;
-    flex-direction: row;
-    width: 380px;
-    height: 20px;
-    gap: 200px;
-    padding:20px;
-    background: #E5E5E5;
-  }
-  
-  .addauto{
-    font-size: 22px;
-    font-weight: 600;
-  }
-  
-  .childs {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-top: 50px;
-    gap: 50px;
-    font-size: 18px;  
-  }
-  
-  .input{
-    width: 350px;
-    height: 20px;
-  }
-  
-  .input-control {
-    display: flex;
-    flex-direction: column;
-    font-weight: 600;
-  }
-  
-  .submit {
-    padding-left: 100px;
-  }
-  
-  button{
-    border-radius: 10px;
-    background-color: #FFC815;
-    width: 150px;
-    height: 35px;
-    font-weight: 600;
-  }
-  
-  .logo-car{
-   width: 35px;
-   height: 20px;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  width: 430px;
+  height: 20px;
+  gap: 200px;
+  padding: 20px;
+  justify-content: space-evenly;
+  background: #E5E5E5;
+}
+
+.addauto {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.form2 {
+  width: 430px;
+  height: 500px;
+  background: #e5e5e5;
+}
+
+.childs2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  gap: 50px;
+  font-size: 18px;  
+}
+
+.input2 {
+  width: 350px;
+  height: 25px;
+  border-radius: 4px;
+  border-color: #E5E5E5;
+}
+
+.input-control2{
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  width: 350px;
+  height: 20px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+.button2 {
+  font-family: "Georama";
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #ffc815;
+  width: 150px;
+  height: 50px;
+  border-radius: 4px;
+  border-color: #E5E5E5;
+}
+
+.logo-car{
+  width: 35px;
+  height: 20px;
+  margin-top: 10px;
+ }
