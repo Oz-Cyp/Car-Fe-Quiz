@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Cars } from "./components/Cars/Cars";
 import { Sales } from "./components/sales/Sales";
 import { Customers } from "./components/customers/Customers";
-import Modal from "./components/sales/Modal";
 
 function App() {
   return (

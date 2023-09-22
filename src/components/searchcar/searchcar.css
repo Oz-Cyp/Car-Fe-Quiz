@@ -6,21 +6,21 @@
   gap: 200px;
   padding-top: 20px;
   justify-content: space-around;
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
-.searchauto{
+.searchauto {
   font-size: 22px;
   font-weight: 600;
 }
 
-.form1{
+.form1 {
   width: 430px;
   height: 550px;
-  background: #E5E5E5;
-  border: 1px solid #DDDDDD;
+  background: #e5e5e5;
+  border: 1px solid #dddddd;
   border-radius: 5px;
-  }
+}
 
 .childs1 {
   display: flex;
@@ -28,21 +28,20 @@
   align-items: center;
   padding-top: 50px;
   gap: 45px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
-.input1{
+.input1 {
   width: 350px;
   height: 30px;
-  border-width: 0ch;
-  border-radius: 2px;
+  border-radius: 4px;
+  border-color: #e5e5e5;
 }
 
 .input-control1 {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-
 }
 
 .submit1 {
@@ -50,19 +49,18 @@
   justify-content: center;
 }
 
-.button{
+.button {
   border-radius: 4px;
-  border-color: #E5E5E5;
+  border-color: #e5e5e5;
   font-size: 15px;
-  background-color: #FFC815;
+  background-color: #ffc815;
   width: 150px;
   height: 35px;
   font-weight: 600;
 }
 
-
-.logo-car{
- width: 35px;
- height: 20px;
- margin-top: 10px;
+.logo-car {
+  width: 35px;
+  height: 20px;
+  margin-top: 10px;
 }

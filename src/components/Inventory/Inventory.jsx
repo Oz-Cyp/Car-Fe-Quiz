@@ -2,21 +2,27 @@ import React from "react";
 import { useEffect, useState } from "react";
 import getCars from "../../services/cars/getCars";
 import "./inventory.css";
-import {ferrari} from "../../img/ferrari.jpeg";
+import { FaTrash } from "react-icons/fa";
+// const image_url = require("../../img/ferrari.jpeg");
 
 export const Inventory = () => {
-  const [cars, getCars] = useState([]);
+  const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [image_url, SetImage_url] = useState("");
 
+  const handleimagechange = (event) => {
+    SetImage_url(event.target.value);
+  };
 
   useEffect(() => {
     const fetchCars = async () => {
       try {
         setLoading(true);
         const response = await getCars();
-        console.log(response.data);
-        getCars(response.data.cars);
+        console.log("response.data", response.data);
+        console.log("response.data.crs", response.data.cars);
+        setCars(response.data.cars);
         setLoading(false);
       } catch (error) {
         setError(true);
@@ -26,8 +32,8 @@ export const Inventory = () => {
 
     fetchCars();
   }, []);
-  
 
+  console.log("cars", cars);
   if (loading) {
     return <div>Loading....</div>;
   }
@@ -36,56 +42,50 @@ export const Inventory = () => {
   }
 
   return (
-    <div>
-      {cars.map((car) => {
-        console.log(car);
-        return (
-          <ul key={car.id}>
-            <li>
-              {car.brand}
-              {car.model}
-              {car.year}
-              {car.price}
-            </li>
-          </ul>
-        );
-      })}
-    </div>
+    <>
+      <div className="rectangle2">
+        {cars.map((car) => {
+          console.log(car);
+          return (
+            <div className="flexbox2" key={car.id}>
+              <img
+                style={{ width: "200px" }}
+                className="img-car"
+                src={car.imageUrl}
+                onChange={handleimagechange}
+              />
+              <div className="info">
+                <div className="left-column">
+                  <div className="left-column-top">
+                    <div className="properties">Brand</div>
+                    {car.brand}
+                  </div>
+                  <div className="left-column-bot">
+                    <div className="properties">Model</div>
+                    {car.model}
+                  </div>
+                </div>
+                <div className="right-column">
+                  <div className="right-column-top">
+                    <div className="properties">Year</div>
+                    {car.year}
+                  </div>
+                  <div className="right-column-bot">
+                    <div className="properties">Price</div>
+                    {car.price}
+                  </div>
+                </div>
+                <div className="buttons">
+                  <button className="update">UPDATE</button>
+                  <button className="delete">
+                    <FaTrash />
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
-
-  // return (
-  //   <div className="flex-container">
-  //    <div className="grid-container">
-  //     {cars.map((item) => (
-  //       <div key={item.id} className="grid-item">
-  //         <div className="item-title">{item.title}</div>
-  //         <div className="item-image">
-  //           <img src={item.imageUrl} alt={item.title} />
-  //         </div>
-  //         <div className="item-attributes" colSpan="2">
-  //           <div className="attribute">{item.attribute1}</div>
-  //           <div className="attribute">{item.attribute2}</div>
-  //         </div>
-  //       </div>
-  //     ))}
-  //   </div>
-  //   </div>
-  // );
 };
-
-  // const cars2 = [
-  //   {
-  //     id: 1,
-  //     title: 'Item 1',
-  //     imageUrl: 'image1.jpg',
-  //     attribute1: 'Attribute A',
-  //     attribute2: 'Attribute B',
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Item 2',
-  //     imageUrl: 'image2.jpg',
-  //     attribute1: 'Attribute C',
-  //     attribute2: 'Attribute D',
-  //   },
-  // ];
