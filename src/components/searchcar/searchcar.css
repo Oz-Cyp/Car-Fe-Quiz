@@ -9,6 +9,14 @@
   background: #e5e5e5;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 50px;
+  gap: 30px;
+}
+
 .searchauto {
   font-size: 22px;
   font-weight: 600;

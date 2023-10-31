@@ -1,31 +1,31 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import getSales from "../../services/sales/getSales";
+import getCustomers from "../../services/customers/getCustomers";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
-import "./Sales.css";
+import "./Customers.css";
 import { Reusable } from "../../Headings/Headings";
 
-export const Sales = () => {
-  const [sales, setSales] = useState([]);
+export const Customers = () => {
+  const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchSales = async () => {
+    const fetchCustomers = async () => {
       try {
         setLoading(true);
-        const response = await getSales();
-        setSales(response.data.sales);
+        const response = await getCustomers();
+        console.log("response: ", response);
+        setCustomers(response.data.Customers);
         setLoading(false);
       } catch (error) {
         setError(true);
-        console.log(error);
       }
     };
 
-    fetchSales();
+    fetchCustomers();
   }, []);
 
   if (loading) {
@@ -37,12 +37,12 @@ export const Sales = () => {
 
   return (
     <Reusable
-      sales={sales}
-      header={"Sales"}
-      header2={"Customers"}
-      header3={"Year"}
-      header4={"saledate"}
-      btnText={"Add Sale"}
+      data={customers}
+      header={"Customers"}
+      header2={"Fullname"}
+      header3={"email"}
+      header4={"Phone Number"}
+      btnText={"Add Customer"}
     />
   );
 };

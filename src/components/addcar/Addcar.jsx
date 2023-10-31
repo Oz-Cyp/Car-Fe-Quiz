@@ -28,45 +28,18 @@ export const Addcar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //make the api call with the submitted data
     postCar({ brand, model, year, price })
-      .then((response) => response.json())
-      .then((data) => {
-        //handle apiresponse
-        console.log("API Response", data);
-        //reset form
+      .then((response) => {
         setBrand("");
         setModel("");
         setYear("");
         setPrice("");
       })
       .catch((error) => {
-        //Handle errors
         console.error("API Error", error);
       });
-
-    // fetch("/cars", {
-    //   method: "POST",
-    //   body: JSON.stringify({ brand, model, year, price }),
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     //handle apiresponse
-    //     console.log("API Response", data);
-    //     //reset form
-    //     setBrand("");
-    //     setModel("");
-    //     setYear("");
-    //     setPrice("");
-    //   })
-    //   .catch((error) => {
-    //     //Handle errors
-    //     console.error("API Error", error);
-    //   });
   };
+
   return (
     <div className="flex-container">
       <form className="form2" onSubmit={handleSubmit}>

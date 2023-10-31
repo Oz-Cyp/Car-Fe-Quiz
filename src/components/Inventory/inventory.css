@@ -4,22 +4,33 @@
   width: 1200px;
   padding-top: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .flexbox2 {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 300px;
+  height: 320px;
   width: 350px;
 }
 
+.form3 {
+  width: 350px;
+  height: 320px;
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
 .img-car {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
-  width: max-content;
-  height: max-content;
+  width: 270px;
+  height: 180px;
 }
 
 .info {
@@ -49,7 +60,7 @@
   gap: 20px;
 }
 
-.buttons {
+.buttons2 {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -63,11 +74,16 @@
   background-color: #ffc815;
   color: black;
   font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  width: 70px;
 }
 
 .delete {
   font-family: Georama;
   font-weight: 100;
-  background-color: #ffc815;
+  background-color: #dddddd;
   color: red;
+  border: none;
 }

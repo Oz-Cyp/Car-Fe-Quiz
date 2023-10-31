@@ -1,12 +1,12 @@
 .App {
-background: #FFFFFF;
-max-height: fit-content;
-height: 100%;
-width: 100%;
-max-width: -webkit-fill-available;
+  background: #ffffff;
+  max-height: fit-content;
+  height: 100%;
+  width: 100%;
+  max-width: -webkit-fill-available;
 }
 
-.link {
+/* .link {
   color: #ffc815;
   font-family: "Georama";
   font-style: normal;
@@ -14,64 +14,62 @@ max-width: -webkit-fill-available;
   text-decoration: none;
   font-size: 24px;
   line-height: 29px;
-}
+} */
 
-.dashboard-child-container{
+.activeSearchbox2 {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  border: 2px;
+  border-radius: 3px;
+  width: 130px;
+  height: 50px;
+  color: #ffc815;
+  font-size: 20px;
 }
 
-.flex-container{
+.search-box2 {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  margin-top: 50px;
-  gap: 30px;
-
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  border-radius: 3px;
+  background-color: #585858;
+  color: white;
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
 }
 
-.img-left{
+.img-left {
   display: flex;
   width: 750px;
   height: 550px;
- 
 }
 
-.navmenu{
-display: flex;
-flex-direction: row;
-justify-content: center;
-padding-top: 80px;
-gap: 50px;
-font-family: 'Georama';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-color: #FFC815;
+.navmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 80px;
+  gap: 50px;
+  font-family: "Georama";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #ffc815;
 }
 
-
-
-/* .childs {
-  padding-top: 25px;
-  margin-left: 25px;
-} */
-
-/* .input{
-  border-radius: 5px;
-} */
-
-.text {
+.text2 {
   display: flex;
   justify-content: center;
   line-height: 50px;
-  font-family: 'Georama';
+  font-family: "Georama";
   font-weight: 600;
+  font-size: 24px;
 }
 
-.submit{
+.submit {
   padding-top: 25px;
 }
 
@@ -82,7 +80,6 @@ color: #FFC815;
   gap: 120px;
   align-items: center;
   background: #585858;
-
   justify-content: flex-end;
   padding-right: 50px;
 }

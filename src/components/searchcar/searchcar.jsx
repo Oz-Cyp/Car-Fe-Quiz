@@ -14,8 +14,6 @@ export const Searchcar = () => {
   const [Price, setPrice] = useState();
   const [filteredCars, setFilteredCars] = useState();
 
-  console.log("cars: ", cars);
-
   const handleBrandchange = (event) => {
     setBrand(event.target.value);
   };
@@ -29,54 +27,52 @@ export const Searchcar = () => {
     setPrice(event.target.value);
   };
 
-  const handleSearch = () => {
-    const brandResult = cars.map((car) => {
-      if (car.brand === Brand) {
-        setFilteredCars(car);
-        return car;
-      }
-    });
+  // const handleSearch = () => {
+  //   const brandResult = cars.map((car) => {
+  //     if (car.brand === Brand) {
+  //       setFilteredCars(car);
+  //       return car;
+  //     }
+  //   });
 
-    if (brandResult.length > 1) {
-      const modelResult = brandResult.map((car) => {
-        if (Model) {
-          if (car.model === Model) {
-            setFilteredCars(car);
-            return car;
-          }
-        }
-      });
+  //   if (brandResult.length > 1) {
+  //     const modelResult = brandResult.map((car) => {
+  //       if (Model) {
+  //         if (car.model === Model) {
+  //           setFilteredCars(car);
+  //           return car;
+  //         }
+  //       }
+  //     });
 
-      if (modelResult.length > 1) {
-        const yearResult = brandResult.map((car) => {
-          if (Year) {
-            if (car.year === Year) {
-              setFilteredCars(car);
-              return car;
-            }
-          }
-        });
+  //     if (modelResult.length > 1) {
+  //       const yearResult = brandResult.map((car) => {
+  //         if (Year) {
+  //           if (car.year === Year) {
+  //             setFilteredCars(car);
+  //             return car;
+  //           }
+  //         }
+  //       });
 
-        if (yearResult.length > 1) {
-          const priceResult = brandResult.map((car) => {
-            if (Price) {
-              if (car.price === Price) {
-                setFilteredCars(car);
-                return car;
-              }
-            }
-          });
-        }
-      }
-    }
-  };
+  //       if (yearResult.length > 1) {
+  //         const priceResult = brandResult.map((car) => {
+  //           if (Price) {
+  //             if (car.price === Price) {
+  //               setFilteredCars(car);
+  //               return car;
+  //             }
+  //           }
+  //         });
+  //       }
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
     const fetchCars = async () => {
       try {
         const response = await getCars();
-        console.log("response.data", response.data);
-        console.log("response.data.crs", response.data.cars);
         setCars(response.data.cars);
       } catch (error) {
         console.log(error);
@@ -86,13 +82,11 @@ export const Searchcar = () => {
     fetchCars();
   }, []);
 
-  console.log("filteredCars", filteredCars);
-
   return (
     <>
       <div className="flex-container">
         <img className="img-left" src={car} alt="logo" />
-        <form className="form1" onSubmit={handleSearch}>
+        <form className="form1">
           <div className="searchcar">
             <img className="logo-car" src={logo} alt="logo" />
             <div className="searchauto">Search auto</div>

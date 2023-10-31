@@ -1,9 +1,9 @@
 import React from "react";
 import { Searchcar } from "../searchcar/searchcar";
 import { Addcar } from "../addcar/Addcar";
-import { Inventory } from "../Inventory/Inventory";
+import { Inventory } from "../Inventory/inventory";
 import { useState } from "react";
-import "./Cars.css"
+import "./Cars.css";
 
 export const Cars = () => {
   const [activeTab, setActiveTab] = useState("search");
@@ -11,7 +11,11 @@ export const Cars = () => {
     <div>
       <div className="dashboard-child-container">
         <div className="navmenu">
-          <div className={activeTab === "search" ? "activeSearchbox" : "search-box" }>
+          <div
+            className={
+              activeTab === "search" ? "activeSearchbox" : "search-box"
+            }
+          >
             <div
               className="text"
               onClick={() => {
@@ -21,7 +25,9 @@ export const Cars = () => {
               Search
             </div>
           </div>
-          <div className={activeTab === "add" ? "activeSearchbox" : "search-box" }>
+          <div
+            className={activeTab === "add" ? "activeSearchbox" : "search-box"}
+          >
             <div
               className="text"
               onClick={() => {
@@ -31,7 +37,11 @@ export const Cars = () => {
               Add
             </div>
           </div>
-          <div className={activeTab === "inventory" ? "activeSearchbox" : "search-box" }>
+          <div
+            className={
+              activeTab === "inventory" ? "activeSearchbox" : "search-box"
+            }
+          >
             <div
               className="text"
               onClick={() => {

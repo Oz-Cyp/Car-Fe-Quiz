@@ -12,21 +12,23 @@ function Modal() {
       <button onClick={toggleModal} className="btn_Modal">
         Open
       </button>
-  
-<div className="modal">
-  <div className="overlay"></div>
-  <div className="modal-content">
-    <h2>Hello Modal</h2>
-    <p>Somethinggg asd ad as ads as asdasddsadasdsa saddasdsadas adsdass</p>
-    <button className="close-modal" onClick={toggleModal}>
-      Close
-    </button>
-  </div>
-</div>;
-</>
+      <div className="modal">
+        //brand model year price saledate BUNLARI FORMA EKLE
+        <div className="overlay"></div>
+        <div className="modal-content">
+          <h2>Hello Modal</h2>
+          <p>
+            Somethinggg asd ad as ads as asdasddsadasdsa saddasdsadas adsdass
+          </p>
+          <button className="close-modal" onClick={toggleModal}>
+            Close
+          </button>
+        </div>
+      </div>
+      ;
+    </>
   );
 }
-
 
 export default Modal;
 
