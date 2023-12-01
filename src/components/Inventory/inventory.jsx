@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import getCars from "../../services/cars/getCars";
 import "./inventory.css";
 import { FaTrash } from "react-icons/fa";
-import updateCarById from "../../services/cars/updateCarById";
+
 import deleteCarById from "../../services/cars/DeleteCarById";
+import UpdateCarModal from "../Inventory/UpdateCarModal";
 
 export const Inventory = () => {
   const [brand, setBrand] = useState("");
@@ -14,6 +15,7 @@ export const Inventory = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [selectedCar, setSelectedCar] = useState(null);
 
   const handleBrandChange = (event) => {
     setBrand(event.target.value);
@@ -31,26 +33,13 @@ export const Inventory = () => {
     setPrice(event.target.value);
   };
 
-  const handleUpdate = (carId, event) => {
-    event.preventDefault();
-    updateCarById({ carId, brand, model, year, price, carId })
-      .then((response) => {
-        setBrand("");
-        setModel("");
-        setYear("");
-        setPrice("");
-        const updatedCarIndex = cars.findIndex((car) => car.carId === carId);
-        if (updatedCarIndex !== -1) {
-          const updatedCars = [...cars];
-          updatedCars[updatedCarIndex] = response.updatedCar;
-          setCars(updatedCars);
-        }
-      })
-      .catch((error) => {
-        console.error("API Error", error);
-      });
+  const handleOpenModal = (car) => {
+    setSelectedCar(car);
   };
 
+  const handleCloseModal = () => {
+    setSelectedCar(null);
+  };
   const handleDelete = (carId, event) => {
     event.preventDefault();
     deleteCarById({ carId, brand, model, year, price })
@@ -121,7 +110,7 @@ export const Inventory = () => {
                 <div className="buttons2">
                   <button
                     className="update"
-                    onClick={(e) => handleUpdate(car.carId, e)}
+                    onClick={(e) => handleOpenModal(car)}
                   >
                     Update
                   </button>
@@ -137,6 +126,14 @@ export const Inventory = () => {
           </div>
         ))}
       </div>
+      {selectedCar && (
+        <UpdateCarModal
+          isOpen={!!selectedCar}
+          onClose={handleCloseModal}
+          onUpdate={handleUpdate}
+          car={selectedCar}
+        />
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Cars } from "./components/Cars/Cars";
 import { Sales } from "./components/sales/Sales";
 import { Customers } from "./components/Customers/Customers";
@@ -7,66 +7,63 @@ import { useState } from "react";
 
 function App() {
   const [activeTab2, setActiveTab2] = useState("cars");
-
+  const navigate = useNavigate();
   return (
-    <BrowserRouter>
-      <div className="App">
-        <nav className="Navbar">
+    <div className="App">
+      <nav className="Navbar">
+        <div
+          className={activeTab2 === "Cars" ? "activeSearchbox2" : "search-box2"}
+        >
           <div
-            className={
-              activeTab2 === "cars" ? "activeSearchbox2" : "search-box2"
-            }
+            className="text2"
+            onClick={() => {
+              navigate("/Cars");
+              setActiveTab2("Cars");
+            }}
           >
-            <div
-              className="text2"
-              onClick={() => {
-                setActiveTab2("cars");
-              }}
-            >
-              Cars
-            </div>
+            Cars
           </div>
+        </div>
+        <div
+          className={
+            activeTab2 === "Sales" ? "activeSearchbox2" : "search-box2"
+          }
+        >
           <div
-            className={
-              activeTab2 === "sales" ? "activeSearchbox2" : "search-box2"
-            }
+            className="text2"
+            onClick={() => {
+              navigate("/Sales");
+              setActiveTab2("Sales");
+            }}
           >
-            <div
-              className="text2"
-              onClick={() => {
-                setActiveTab2("sales");
-              }}
-            >
-              Sales
-            </div>
+            Sales
           </div>
+        </div>
+        <div
+          className={
+            activeTab2 === "Customers" ? "activeSearchbox2" : "search-box2"
+          }
+        >
           <div
-            className={
-              activeTab2 === "customers" ? "activeSearchbox2" : "search-box2"
-            }
+            className="text2"
+            onClick={() => {
+              navigate("/Customers");
+              setActiveTab2("Customers");
+            }}
           >
-            <div
-              className="text2"
-              onClick={() => {
-                setActiveTab2("customers");
-              }}
-            >
-              Customers
-            </div>
+            Customers
           </div>
-        </nav>
-        {activeTab2 === "cars" && <Cars />}
-        {activeTab2 === "sales" && <Sales></Sales>}
-        {activeTab2 === "customers" && <Customers></Customers>}
-        <Routes>
-          <Route path="/Cars" element={<Cars />} />
-          <Route path="/Sales" element={<Sales />} />
-          <Route path="/customers" element={<Customers></Customers>} />
-          <Route index element={<Cars />} />
-          <Route path="*" element={<div>404 Not Found</div>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+        </div>
+      </nav>
+      {console.log(activeTab2)}
+      <Routes>
+        <Route path="/Cars" element={<Cars />} />
+        <Route path="/Sales" element={<Sales />} />
+        <Route path="/Customers" element={<Customers></Customers>} />
+        <Route index element={<Cars />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </div>
   );
 }
 

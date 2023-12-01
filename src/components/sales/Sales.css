@@ -10,7 +10,7 @@
   justify-content: space-between;
   border-color: brown;
   border-radius: 2px;
-  width: 1000px;
+  width: 1100px;
 }
 
 .headings {
@@ -32,7 +32,7 @@
   flex-direction: row;
   font-size: 20px;
   font-weight: 500;
-  gap: 130px;
+  gap: 160px;
 }
 
 .sale-info {
@@ -92,5 +92,5 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  background-color: #e5e5e5;
+  background-color: yellow;
 }
